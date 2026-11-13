@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota Indonesia | Simpel & Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Konfigurasi Tailwind untuk mendeteksi class 'dark'
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-red-600 selection:text-white transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="bg-red-600 text-white font-black px-2.5 py-1 rounded text-sm tracking-widest">T</span>
+                <span class="font-bold text-xl tracking-wider">TOYOTA</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#beranda" class="hover:text-red-600 dark:hover:text-red-500 transition py-1">Beranda</a>
+                <a href="#katalog" class="hover:text-red-600 dark:hover:text-red-500 transition py-1">Katalog</a>
+                <a href="#kredit" class="hover:text-red-600 dark:hover:text-red-500 transition py-1">Kredit</a>
+                
+                <!-- Tombol Ganti Tema (Desktop) -->
+                <button id="theme-toggle" class="p-2 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-500 transition focus:outline-none flex items-center space-x-1" title="Ganti Tema">
+                    <span id="theme-text" class="text-xs font-semibold px-1">☀️ Terang</span>
+                </button>
+
+                <a href="#testdrive" class="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-semibold transition leading-none">Test Drive</a>
+            </nav>
+
+            <div class="flex items-center space-x-3 md:hidden">
+                <!-- Tombol Ganti Tema (Mobile) -->
+                <button id="theme-toggle-mobile" class="p-2 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-300 focus:outline-none">
+                    <span id="theme-text-mobile" class="text-xs font-semibold">☀️</span>
+                </button>
+
+                <button id="menu-btn" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 px-4 pt-2 pb-4 space-y-3 transition-colors duration-300">
+            <a href="#beranda" class="block py-2 hover:text-red-600 dark:hover:text-red-500">Beranda</a>
+            <a href="#katalog" class="block py-2 hover:text-red-600 dark:hover:text-red-500">Katalog</a>
+            <a href="#kredit" class="block py-2 hover:text-red-600 dark:hover:text-red-500">Kredit</a>
+            <a href="#testdrive" class="block text-center bg-red-600 text-white py-2.5 rounded-full font-semibold">Test Drive</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <span class="text-red-600 dark:text-red-500 font-semibold tracking-wider text-sm uppercase">Let's Go Beyond</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                Inovasi Mobil Masa Depan Toyota.
+            </h1>
+            <p class="text-zinc-600 dark:text-zinc-400 text-lg">
+                Temukan kenyamanan berkendara terbaik dengan teknologi canggih dan desain modern yang ramah lingkungan.
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                <a href="#katalog" class="bg-red-600 hover:bg-red-700 text-white text-center px-8 py-3.5 rounded-full font-semibold transition">Lihat Katalog</a>
+                <a href="#testdrive" class="border border-zinc-300 dark:border-zinc-700 hover:border-zinc-500 text-center px-8 py-3.5 rounded-full font-semibold transition">Book Test Drive</a>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl blur-lg opacity-30"></div>
+            <!-- Menggunakan object-cover dan tinggi penuh agar tidak ada ruang hitam -->
+            <div class="relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 overflow-hidden h-[340px] sm:h-[400px] shadow-xl transition-colors duration-300">
+                <img src="816A9934-2.jpg" alt="Toyota Rush" class="rounded-xl w-full h-full object-cover transform hover:scale-105 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Section -->
+    <section id="katalog" class="py-20 bg-zinc-100 dark:bg-zinc-900/50 border-t border-zinc-200 dark:border-zinc-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight mb-3">Pilihan Model</h2>
+                <p class="text-zinc-600 dark:text-zinc-400">Jelajahi varian kendaraan yang sesuai dengan gaya hidup dan kebutuhan mobilitas Anda.</p>
+                
+                <div id="filter-container" class="flex flex-wrap justify-center gap-2 mt-6">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-red-600 text-white transition">Semua</button>
+                    <button data-filter="suv" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition">SUV</button>
+                    <button data-filter="sedan" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition">Sedan</button>
+                    <button data-filter="hybrid" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition">Hybrid</button>
+                    <button data-filter="gr" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition">GR Sport</button>
+                </div>
+            </div>
+
+            <div id="car-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Data Mobil dirender dinamis via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kalkulator Kredit Section -->
+    <section id="kredit" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-xl transition-colors duration-300">
+            <h2 class="text-2xl font-bold text-center mb-2">Simulasi Kalkulator Kredit</h2>
+            <p class="text-zinc-600 dark:text-zinc-400 text-center text-sm mb-8">Hitung estimasi cicilan bulanan kendaraan impian Anda dengan transparan.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Harga Kendaraan (OTR)</label>
+                        <input type="number" id="harga-input" value="450000000" class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-red-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Uang Muka (DP) - <span id="dp-val">20</span>%</label>
+                        <input type="range" id="dp-input" min="10" max="50" value="20" class="w-full accent-red-600 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Tenor (Tahun)</label>
+                        <select id="tenor-input" class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:border-red-600">
+                            <option value="1">1 Tahun (12 Bulan)</option>
+                            <option value="2">2 Tahun (24 Bulan)</option>
+                            <option value="3">3 Tahun (36 Bulan)</option>
+                            <option value="4">4 Tahun (48 Bulan)</option>
+                            <option value="5" selected>5 Tahun (60 Bulan)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4">Rincian Pembiayaan</h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-zinc-500 dark:text-zinc-400">Nominal DP:</span>
+                                <span id="res-dp" class="font-semibold text-zinc-900 dark:text-white">Rp 90.000.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-zinc-500 dark:text-zinc-400">Pokok Hutang:</span>
+                                <span id="res-pokok" class="font-semibold text-zinc-900 dark:text-white">Rp 360.000.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-zinc-200 dark:border-zinc-800 pt-6 mt-6">
+                        <span class="block text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-1">Estimasi Cicilan / Bulan</span>
+                        <div id="res-cicilan" class="text-2xl sm:text-3xl font-bold text-red-600 dark:text-red-500">Rp 7.850.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Drive Section -->
+    <section id="testdrive" class="py-20 bg-zinc-100 dark:bg-zinc-900/50 border-t border-zinc-200 dark:border-zinc-900 transition-colors duration-300">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold tracking-tight mb-2">Jadwalkan Test Drive</h2>
+                <p class="text-zinc-600 dark:text-zinc-400 text-sm">Rasakan pengalaman berkendara langsung di diler resmi terdekat.</p>
+            </div>
+
+            <form id="testdrive-form" class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-4 shadow-lg transition-colors duration-300">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Nama Lengkap</label>
+                        <input type="text" required class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-red-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Nomor WhatsApp</label>
+                        <input type="tel" required class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-red-600">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Pilihan Mobil</label>
+                    <select id="select-car-target" class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-red-600">
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Tanggal Rencana</label>
+                    <input type="date" required class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg px-4 py-2.5 text-zinc-900 dark:text-white focus:outline-none focus:border-red-600">
+                </div>
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded-lg transition mt-4">Kirim Permintaan Test Drive</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal Detail -->
+    <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl transition-colors duration-300">
+            <button id="modal-close" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-900 dark:hover:text-white text-xl font-bold">&times;</button>
+            <div id="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-t border-zinc-200 dark:border-zinc-900 py-8 text-center text-zinc-500 text-sm transition-colors duration-300">
+        <p>&copy; 2026 PT Toyota-Astra Motor. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
